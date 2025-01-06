@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Темна тема */
+  [data-theme="dark"] {
+    --background: linear-gradient(140deg, rgba(70,0,8,0.48082983193277307) 0%, rgba(236,7,171,0.9654236694677871) 100%);
+    --text: #f3f4f6; /* text-gray-100 */
+    --primary: #6366f1; /* bg-indigo-500 */
+    --primary-hover: #4f46e5; /* hover:bg-indigo-600 */
+    --secondary: #1f2937; /* bg-gray-800 */
+    --accent: #818cf8; /* text-indigo-400 */
+    --border: #374151; /* border-gray-700 */
+    --card: #1f2937; /* bg-gray-800 */
+    --input: #1f2937; /* bg-gray-800 */
+    --input-border: #374151; /* border-gray-700 */
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Montserrat, serif;
+}
+
+/* Світла тема */
+[data-theme="light"] {
+  --background: linear-gradient(140deg, rgba(131, 58, 180, 0.477) 0%, rgba(253, 29, 29, 0.46) 50%, rgba(252, 176, 69, 0.568) 100%);
+  --text: #111827; /* text-gray-900 */
+  --primary: #4f46e5; /* bg-indigo-600 */
+  --primary-hover: #4338ca; /* hover:bg-indigo-700 */
+  --secondary: #ffffff; /* bg-white */
+  --accent: #4f46e5; /* text-indigo-600 */
+  --border: #e5e7eb; /* border-gray-200 */
+  --card: #ffffff; /* bg-white */
+  --input: #ffffff; /* bg-white */
+  --input-border: #e5e7eb; /* border-gray-200 */
+}
