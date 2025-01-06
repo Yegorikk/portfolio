@@ -369,7 +369,7 @@ export default function Home() {
                   }}
                 >
                   <Image
-                    src="/portfolio/file.svg"
+                    src={`${basePath}/file.svg`}
                     alt="Resume"
                     fill
                     className={`object-contain ${darkMode ? "invert" : ""}`}
