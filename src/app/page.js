@@ -4,6 +4,8 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { AnimatedBackground } from "./components/AnimatedBackground";
 import Image from "next/image";
 
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+
 const skills = [
   { name: "JavaScript", level: 85 },
   { name: "React", level: 80 },
@@ -38,28 +40,28 @@ const contacts = [
   {
     title: "Email",
     value: "0yegorstep0@gmail.com",
-    icon: "/email.svg",
+    icon: `${basePath}/email.svg`,
     link: "mailto:0yegorstep0@gmail.com",
     animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.1 } },
   },
   {
     title: "Phone",
     value: "+380 99 926 02 58",
-    icon: "/phone.svg",
+    icon: `${basePath}/phone.svg`,
     link: "tel:+380999260258",
     animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.1 } },
   },
   {
     title: "Telegram",
     value: "@Yegorikkk",
-    icon: "/telegram.svg",
+    icon: `${basePath}/telegram.svg`,
     link: "https://t.me/Yegorikkk",
     animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.1 } },
   },
   {
     title: "GitHub",
     value: "github.com/Yegorikk",
-    icon: "/github.svg",
+    icon: `${basePath}/github.svg`,
     link: "https://github.com/Yegorikk",
     animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.1 } },
   },
@@ -173,7 +175,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <Image
-                  src="/avatar.webp"
+                  src={`${basePath}/avatar.webp`}
                   alt="Yegor Popov"
                   fill
                   className="object-cover"
@@ -367,7 +369,7 @@ export default function Home() {
                   }}
                 >
                   <Image
-                    src="/file.svg"
+                    src="/portfolio/file.svg"
                     alt="Resume"
                     fill
                     className={`object-contain ${darkMode ? "invert" : ""}`}
