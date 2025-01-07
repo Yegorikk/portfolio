@@ -23,7 +23,7 @@ const projects = [
     tech: ["React", "Zustand", "Firebase", "Tailwind CSS"],
     demoLink: "#",
     githubLink: "#",
-    iframeUrl: "https://yegorikk.github.io/tic-tac-react/",
+    imageUrl: "https://example.com/tic-tac-react-image.png",
   },
   {
     title: "Portfolio Website",
@@ -32,7 +32,7 @@ const projects = [
     tech: ["Next.js", "Framer Motion", "Tailwind CSS"],
     demoLink: "#",
     githubLink: "#",
-    iframeUrl: "https://portfolio-demo.com",
+    imageUrl: "https://example.com/portfolio-image.png",
   },
 ];
 
@@ -42,28 +42,28 @@ const contacts = [
     value: "0yegorstep0@gmail.com",
     icon: `${basePath}/email.svg`,
     link: "mailto:0yegorstep0@gmail.com",
-    animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.1 } },
+    animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.5 } },
   },
   {
     title: "Phone",
     value: "+380 99 926 02 58",
     icon: `${basePath}/phone.svg`,
     link: "tel:+380999260258",
-    animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.1 } },
+    animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.5 } },
   },
   {
     title: "Telegram",
     value: "@Yegorikkk",
     icon: `${basePath}/telegram.svg`,
     link: "https://t.me/Yegorikkk",
-    animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.1 } },
+    animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.5 } },
   },
   {
     title: "GitHub",
     value: "github.com/Yegorikk",
     icon: `${basePath}/github.svg`,
     link: "https://github.com/Yegorikk",
-    animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.1 } },
+    animation: { rotate: [0, 10, -10, 0], transition: { duration: 0.5 } },
   },
 ];
 
@@ -203,7 +203,10 @@ export default function Home() {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ 
+                  scale: 1.02,
+                  transition: { duration: 0.2 }
+                }}
                 className="relative bg-card p-4 rounded-lg shadow-sm"
               >
                 <div className="flex justify-between mb-2">
@@ -244,21 +247,23 @@ export default function Home() {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.2 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
+                whileHover={{ 
+                  y: -5,
+                  transition: { duration: 0.2 }
+                }}
                 className="bg-card rounded-lg overflow-hidden shadow-lg"
               >
                 <div className="relative h-48 overflow-hidden">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0 }}
                     className="w-full h-full"
                   >
-                    <iframe
-                      src={project.iframeUrl}
-                      title={project.title}
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
                       className="w-full h-full border-none transform scale-125"
                       loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     />
                   </motion.div>
                 </div>
@@ -324,7 +329,11 @@ export default function Home() {
                 className="group bg-card p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -8 }}
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ 
+                  y: -8,
+                  transition: { duration: 0 }
+                }}
                 viewport={{ once: true }}
               >
                 <div className="flex items-center space-x-4">
@@ -354,10 +363,13 @@ export default function Home() {
               href="/resume.pdf"
               download
               className="group bg-card p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 md:col-span-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -8 }}
-              transition={{ delay: 0.4 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ 
+                  y: -8,
+                  transition: { duration: 0.2 }
+                }}
               viewport={{ once: true }}
             >
               <div className="flex items-center justify-center space-x-4">
@@ -365,7 +377,7 @@ export default function Home() {
                   className="w-12 h-12 relative"
                   whileHover={{
                     rotate: [0, -10, 10, 0],
-                    transition: { duration: 0.1 },
+                    transition: { duration: 0 },
                   }}
                 >
                   <Image
