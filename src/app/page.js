@@ -377,7 +377,7 @@ export default function Home() {
                   className="w-12 h-12 relative"
                   whileHover={{
                     rotate: [0, -10, 10, 0],
-                    transition: { duration: 0 },
+                    transition: { duration: 0.5 },
                   }}
                 >
                   <Image
